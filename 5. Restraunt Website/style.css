@@ -1,0 +1,122 @@
+/* Importing Roboto Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+/* Avoiding Browser's Padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html, body {
+    line-height: 1.4;
+    font-weight: 300;
+    font-family: "Roboto", sans-serif;
+}
+
+/* 1. NAVIGATION */
+/* We will use flex to give space between both navigation icons */
+
+nav {
+    box-shadow: 5px 5px 5px rgba(1, 1, 1, 0.5);
+    position: sticky; /*so the bar won't disappear despite scrolling */
+    top: 0;
+    margin-bottom: 32px;
+    background-color: white; /* it will make background transparent, all colors will be able to pass throught it */
+    padding: 10px; /* coz icons appear at the edges when viewed in mobile view, padding will create some space */
+}
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* as it keeps going far, we will put them in a container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto; /* left right auto, top bottom 0 */
+}
+
+.bar_icon {
+    font-size: 32px; /* to increase size of bars */
+}
+
+
+
+/* 2. HERO SECTION */
+/* Here will put the IMAGE and the other section in a flex, and put them side by side */
+
+
+.hero {
+    display: flex; /*to see pic and text content side by side */
+    gap: 100px; /*to give space between aboe items */
+    justify-content: center; /* to bring both in center */
+    align-items: center; /* to have both in middle (text will be in middle of photo on left */
+}
+
+
+/* to apply flex on text in hero content */
+.hero_content {
+    display: flex; /* it will disperse order of content */
+    flex-direction: column; /*it will put them in column order */
+    gap: 20px; /* it will put gap of 20px between all objects in hero content */
+}
+
+
+/* let's change background color of tag */
+.tag {
+    background-color: #149f39;
+    padding: 5px 10px; /*top bottom 5px, left right 10 pixels */
+    color: white; /* color of text white */
+    align-self: flex-start; /* as the background color of text was stretched to the end, it aligned it to the length of text only. */
+}
+
+/* let's increase size of h1 tag in hero section*/
+.hero_content h1 {
+    font-size: 72px;
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+/* let's do the button now. */
+/* As we are using 'button' tag directly, the follow css will be applied on all the buttons automatically */
+button {
+    padding: 10px 15px;
+    border: none;
+    transition: 0.2s ease-in-out;
+}
+
+button:hover {
+    opacity: 0.8;
+    transition: 0.2s ease-in-out;
+}
+
+/* lets give 'explore button' some styling now */
+.explore_btn {
+    background: #ffc066;
+    align-self: flex-start; /* to align background color with the length of text */
+}
+
+/* Hero section is completed here, but let's make it RESPONSIVE as well */
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+    }
+    .hero_image {
+        display: flex;
+        justify-content: center;
+    }
+    .hero_image img {
+        width:90%;
+    }
+    .hero_content {
+        gap: 10px;
+        padding: 10px;
+    }
+    .hero_content h1 {
+        font-size: 32px;
+    }
+}
