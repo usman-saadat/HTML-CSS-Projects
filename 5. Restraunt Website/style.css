@@ -1,6 +1,7 @@
 /* Importing Roboto Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+/* For icons we are using fontawesome.com */
 
 /* Avoiding Browser's Padding */
 * {
@@ -9,7 +10,7 @@
     box-sizing: border-box;
 }
 
-
+/* Some overall settings for html and body */
 html, body {
     line-height: 1.4;
     font-weight: 300;
@@ -17,16 +18,18 @@ html, body {
 }
 
 /* 1. NAVIGATION */
-/* We will use flex to give space between both navigation icons */
+/* We will use flex to give space between both navigation icons and show them in same row. (as currently using only html they are being shown as list. */
 
 nav {
     box-shadow: 5px 5px 5px rgba(1, 1, 1, 0.5);
     position: sticky; /*so the bar won't disappear despite scrolling */
     top: 0;
     margin-bottom: 32px;
-    background-color: white; /* it will make background transparent, all colors will be able to pass throught it */
+    background-color: white; /* it will not make background transparent, all colors will not be be able to pass throught it */
     padding: 10px; /* coz icons appear at the edges when viewed in mobile view, padding will create some space */
+    z-index: 50; /* for making photos in 'menu' section not overlap each other */
 }
+
 .navigation {
     display: flex;
     justify-content: space-between;
@@ -35,45 +38,45 @@ nav {
 
 /* as it keeps going far, we will put them in a container */
 .container {
-    max-width: 1200px;
+    max-width: 1200px; /* This container contains whole page in it, it's of 1200px, that's why you see white space on both sides of page */
     margin: 0 auto; /* left right auto, top bottom 0 */
 }
 
 .bar_icon {
-    font-size: 32px; /* to increase size of bars */
+    font-size: 32px; /* to increase size of bars, as bars were looking small */
 }
 
 
 
 /* 2. HERO SECTION */
-/* Here will put the IMAGE and the other section in a flex, and put them side by side */
+/* Here will put the IMAGE and the TEXT sections in a flex, and put them side by side */
 
 
 .hero {
-    display: flex; /*to see pic and text content side by side */
-    gap: 100px; /*to give space between aboe items */
+    display: flex; /*to see pic (hero_image) and text (hero_content) content side by side */
+    gap: 100px; /*to give space between above items */
     justify-content: center; /* to bring both in center */
     align-items: center; /* to have both in middle (text will be in middle of photo on left */
 }
 
 
-/* to apply flex on text in hero content */
+/* now to make text (in hero_content) better, apply flex  */
 .hero_content {
-    display: flex; /* it will disperse order of content */
+    display: flex; /* it will disperse order of content at first, to fix it.. use below line */
     flex-direction: column; /*it will put them in column order */
     gap: 20px; /* it will put gap of 20px between all objects in hero content */
 }
 
 
-/* let's change background color of tag */
+/* let's change background color of tag (50% off line)  */
 .tag {
     background-color: #149f39;
     padding: 5px 10px; /*top bottom 5px, left right 10 pixels */
     color: white; /* color of text white */
-    align-self: flex-start; /* as the background color of text was stretched to the end, it aligned it to the length of text only. */
+    align-self: flex-start; /* as the background color of text was stretched to the end, it will align it to the length of text only. */
 }
 
-/* let's increase size of h1 tag in hero section*/
+/* after tag, let's increase size of h1 tag in hero_content section*/
 .hero_content h1 {
     font-size: 72px;
     line-height: 1.2;
@@ -81,7 +84,7 @@ nav {
 }
 
 /* let's do the button now. */
-/* As we are using 'button' tag directly, the follow css will be applied on all the buttons automatically */
+/* As we are using 'button' tag directly, the following css will be applied on all the buttons automatically */
 button {
     padding: 10px 15px;
     border: none;
@@ -99,8 +102,162 @@ button:hover {
     align-self: flex-start; /* to align background color with the length of text */
 }
 
-/* Hero section is completed here, but let's make it RESPONSIVE as well */
+/* Hero section is completed here */
 
+
+/* 3. FEATURES */
+
+.features {
+    margin-top: 100px; /* Will add space on top of features section */
+    display: flex; /* to see all features side by side */
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+/* to make features look even better, let's use flex again on FEATURE (not features) */
+.feature {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    transition: 0.2s ease-in-out;
+}
+
+/* to see box around features when we hover over it */
+.feature:hover {
+    transition: 0.2s ease-in-out;
+    box-shadow: 5px 5px 5px rgba(1, 1, 1, 0.05);
+}
+
+.feature img {
+    width: 72px; /* to fix the size of images in feature, (it will stick them to the stated size, so pics won't show huge in mobile view) */
+}
+
+
+/* 4. DIVIDER */
+
+.divider {
+    border: 1px solid #ccc;
+    margin: 20px 0; /* top bottom margin is 20, left right is 0 */
+}
+
+
+/* 5. MENU */
+/* We will use Grid Template Area to have multiple photos on page. */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin: 50px 0;
+    align-items: center; /* as we are using columm, so we won't use 'justify-content', we will use align-items to bring photos in center. */
+}
+
+/* ring 'tag' in center: */
+.menu .tag {
+    align-self: center;
+}
+
+/* now let's make it look like a grid */
+.grid {
+    display: grid;
+    gap: 10px; /* photos will still be in one column, but now there is gap between them */
+    grid-template-areas: 
+    "I1 I1 I2 I3" 
+    "I1 I1 I2 I7"
+    "I4 I5 I6 I7";
+}
+
+/* let's choose each image/item class, and in each item, there's a grid area, let's define those areas. Then go above to grid class, and write grid-template-area. Then create blocks of them*/
+.item1 {
+    grid-area: I1;
+}
+.item2 {
+    grid-area: I2;
+}
+.item3 {
+    grid-area: I3;
+}
+.item4 {
+    grid-area: I4;
+}
+.item5 {
+    grid-area: I5;
+}
+.item6 {
+    grid-area: I6;
+}
+.item7 {
+    grid-area: I7;
+}
+
+
+.grid_image {
+    border-radius: 10px;
+    transition: 0.2s ease-in-out;
+    width: 100%; /* for responsiveness */
+    height: 100%; /* for responsiveness */
+}
+
+.grid_image:hover {
+    transform: scale(1.05);
+    transition: 0.2s ease-in-out;
+    /* then we have set 'z-index: to 50; in nav', to make photos not overlap eachother. */
+}
+
+
+/* 6. FOOTER */
+
+footer {
+    background-color: #fff0db;
+}
+
+.footer_container {
+    padding: 30px;
+    display: flex;
+    justify-content: space-between; /* this will add space between all footer items */
+}
+
+.link_lists h3 {
+    margin-bottom: 10px;
+    color: gray;
+}
+
+.news_letter h3 {
+    color: gray;
+}
+
+/* to remove bullet points of link lists in 'main links' and 'support' */
+.link_lists ul {
+    list-style: none;
+}
+
+/* now let's add space between list items */
+.link_lists ul li {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* now let's fix input tag */
+.news_letter input {
+    padding: 5px 40px;
+    margin-bottom: 10px;
+}
+
+/* Now let's put icons container */
+.icon_container {
+    display: flex;
+    gap: 15px;
+    font-size: 32px;
+}
+
+/*---------------------------------------------------------------*/
+
+
+
+
+
+/* To Make all Above Responsive, do following: */
 @media (max-width: 768px) {
     .hero {
         flex-direction: column;
@@ -118,5 +275,20 @@ button:hover {
     }
     .hero_content h1 {
         font-size: 32px;
+    }
+    .features {
+        flex-direction: column;
+    }
+    .feature {
+        flex-direction: column;
+    }
+    .grid {
+        padding: 10px; /* to give space on all 4 sides of the grid */
+    }
+    .grid_image {
+        border-radius: 0px;
+    }
+    .footer_container {
+        flex-direction: column;
     }
 }
