@@ -1,0 +1,107 @@
+/* Import 'inter' font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* Avoiding Browser Padding etc */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Overall HTML and Body formattings */
+html {
+    font-size: 62.5%; /* as 1rem = 16 px, we need 10 px, by setting size equal to 62.5%, we get only 10px. Setting this size, also helps in making site responsive. */
+}
+
+html, body {
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    line-height: 1.4;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 1.4rem;
+}
+
+/* 1. NAVIGATION SECTION
+
+/* To arrange Navbar items in row */
+header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+}
+
+/* Now selecting Nav and separating all the items to where we need them */
+nav {
+    padding: 1rem; /* read line 51, then do line 37, 38, 39 */
+    max-width: 1200px;
+    margin: 0 auto; /* so that it stays in center */
+    display: flex;
+    justify-content: space-between;
+}
+
+/* as list is showing in bullet form (with dots), to make it dot-less let's change its style */
+ul {
+    list-style: none;
+}
+
+/* Right now list is showing all items in different rows, let's bring all of them in 1 row */
+nav ul {
+    display: flex;
+    gap: 2rem; /*as there wasn't any gap between list items*/
+    /* now give padding in 'nav' of 1 rem, and some padding too, so that the items don't seem sticked to edges of screen. Go above in nav */
+}
+
+/* let's add hover effect on icons */
+nav ul li {
+    font-size: 1.8rem;
+
+}
+
+nav ul li:hover {
+    border-bottom: rgb(255, 251,0) 2px solid;
+}
+
+/* to increase icons size in nav */
+nav i {
+    font-size: 2.5 rem;
+}
+
+
+/* 2. HERO SECTION */
+
+/* Let's set dimensions of main tag */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#hero {
+    display: flex; /* to have image and text side by side. */
+    justify-content: space-between; /* to put space between them */
+    align-items: center; /* to have them in center */
+}
+
+/* now let's fix image and text */
+.hero_content h1 {
+    font-size: 6rem;
+    line-height: 1.2;
+}
+
+/* fixing h4 tag */
+.hero_content h4 {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+/* now let's make borders of image rounded. For that we will just put border-radius on image */
+.hero_image img {
+    border-radius: 5rem;
+}
+
+
+/* 3. LONG CARD  */
+
