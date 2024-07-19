@@ -105,3 +105,138 @@ main {
 
 /* 3. LONG CARD  */
 
+.h_card {
+    display: flex;
+    margin: 2rem 1rem; /* to create space between this card and content above, & 1rem margin from left right */
+    box-shadow: 0px 5px 4px rgba(221, 221, 221, 0.25); /* gave shadows on all x, y and z axis */
+    align-items: center; /* to bring all items in center */
+    border: 1px solid #e2e2e2; /* will create outline of box in which card content and image are */
+    border-radius: 0.5rem; /* but you will see it's not applied on edged of photo, for that, apply 'hidden' setting (see in next line) */
+    overflow: hidden;
+}
+
+
+.card_content {
+    padding: 2rem; /* it will create space on all sides of content (content won't be sticked to the edges) */
+    display: flex; 
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* now let's fix Date & Read More button (which are in class 'status' */
+
+.status {
+    display: flex;
+    justify-content: space-between; /* this will put date and read more on left and right most corners */
+}
+
+/*now choose button */
+.read-btn {
+    all:unset ; /*unsetting all styling in button (button will look like normal text now) */
+    font-weight: 600; /*font will look bold now */
+    border-bottom: 1px transparent;
+}
+
+.read-btn:hover {
+    border-bottom: 1px solid #ccc; /* copy this line, in above .read-btn as well, but with 'transparent color' so that layout shift na ho */
+}
+
+/* Long card is done here */
+
+
+/* 4. THREE CARDS (VERTICAL CARDS) */
+.v_card {
+    display: flex;
+    flex-direction: column-reverse; /* because we want to rever the order (we want image on top then the post) */
+    max-width: 320px; /* it will reduce size of card, otherwise it was taking whole screen */
+    box-shadow: 0px 5px 4px rgba(221, 221, 221, 0.25);
+    align-items: center;
+    border: 1px solid #e2e2e2;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+
+/* to bring all 3 cards in same row, let's choose cart_container */
+.card_container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+/* all cards are in same row, but not in center, use wrapper for that */
+.card_wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+/* but the image hasn't properly stretched according to dimensions, use v_card img, and fix it */
+.v_card img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 5. LONG BIG CARD */
+/* It has same settings as before, nothing different */
+
+
+/* 6. FOOTER */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer ul {
+    display: flex;
+    gap: 2rem;
+}
+
+footer ul li {
+    font-size: 1.8rem;
+}
+
+
+
+
+/* POST PAGE */
+
+.post h1 {
+    font-size: 3rem;
+}
+
+/* to bring whole image, use banner_image img */
+.banner_image img {
+    width: 100%;
+}
+
+/* Now let's put Author name and Date side by side */
+.about_author {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* Now we can see, there's no spacing over and under horizontal line, so select it */
+.post hr {
+    margin: 3rem 0; /* we gave margin of 3rem from up and down */
+}
+
+/* Now let's fix article */
+article {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+/* To remove Line under 'Home' and 'Posts' anchor tags, undecorate anchor tag */
+
+a {
+    text-decoration: none;
+    color: #000;
+}
