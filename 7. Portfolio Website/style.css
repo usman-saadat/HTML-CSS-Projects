@@ -56,7 +56,7 @@ a {
     color: white;
 }
 
-/* Now the home, projects etc are in list, not in same row, let's fix it */
+/* Now the home, projects etc are in list form, not in same row, let's fix it */
 
 nav ul {
     display: flex;
@@ -67,7 +67,7 @@ ul {
     list-style: none;
 }
 
-/* now let's fix the log 'Portfolio */
+/* now let's fix the logo 'Portfolio' */
 
 .logo {
     font-size: 2rem;
@@ -93,4 +93,89 @@ ul {
 
 /* 2. HERO */
 
+/* let's set background color of hero section */
+
+#hero {
+    background: var(--dark-color);
+    padding: 4rem 0;
+    border-bottom: 4px solid var(--lighting-color); /* to add a border line after Hero section */
+}
+
+/* to bring text in same line as image, use flex */
+
+#hero .container {
+    display: flex; /* this will put them side by side */
+    justify-content: space-around;
+    align-items: center; 
+}
+
+/* to give different formatting to hero section's text content.. */
+
+.hero_content {
+    display: grid;
+    place-items: center; /* this will bring them in bit more center because of grid */
+}
+
+#hero h1 {
+    font-size: 3rem;
+    font-weight: bold; /* this will make 'hi i am john doe bold' */
+}
+
+/* now let's edit 'hi */
+.hi_text {
+    font-size: 6rem;
+    font-weight: bold;
+    color:var(--secondary-color); /* will make 'hi' yellow */
+}
+
+/* make 'John doe' big as well */
+.name_text {
+    font-size: 5rem;
+}
+
+/* now let's format 'frontend developer */
+#hero h2 {
+    font-size: 4rem;
+    font-weight: bold; /* this will make 'hi i am john doe bold' */
+
+    /* applying annimation with following lines */
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: 0.15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */ /* Adjust as needed */
+    animation: typing 5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* typing annimation's code, that will run fro width (of the text) 0 to width 100 (means whole text) */
+@keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+}
+
+
+/* to give blinking effect at the end of text */
+@keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: orange;
+    }
+}
+
+
+/* Let's animate Image. (using www.animate.style) */
+/* added 'Link' code in Head of Html file, and in class of image in hero section as well */
+
+
+/* Hero section COMPLETED */
+/* ------------------------------------------------------------------------- */
+
+
+/* 3.PROJECTS */
 

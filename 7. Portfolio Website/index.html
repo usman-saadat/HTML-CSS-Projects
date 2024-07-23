@@ -7,6 +7,7 @@
     <title>Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/da9868f202.js" crossorigin="anonymous"></script> <!--Using Font Awesome Library for Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> <!-- For css animation from www.animation.style -->
 </head>
 <body>
     <!--1. Navigation -->
@@ -35,5 +36,43 @@
 
         </nav>
     </header>
+
+    <main>
+
+        <!--2. HERO -->
+        <section id="hero">
+            <div class="container">
+                <!-- Image -->
+                <div class="hero_image animate__animated animate__swing"> <!-- animate__bounceIn is css animation class -->
+                    <img src="./images/hero.png">
+                </div>
+                
+                <!-- Headings -->
+                <div class="hero_content">
+                    <h1><span class="hi_text">Hi,</span> I am <span class="name_text">John Doe</span></h1>
+                    <h2>Frontend Developer</h2>
+                </div>
+            </div>
+        </section>
+
+        <!--3. PROJECTS -->
+        <section id="project">
+            <div class="container"> <!--container again so that everything remains in center -->
+                <div class="project_container">
+                    <div class="grid_item">
+                        <div class="card">
+                            <!--Image -->
+                            <img src="./images/img 1.png"/>
+                            <!-- Card Content -->
+                            <div class="card_content">
+                                <h3>Tribute Website</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
 </body>
 </html>
