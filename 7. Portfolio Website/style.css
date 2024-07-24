@@ -179,3 +179,189 @@ ul {
 
 /* 3.PROJECTS */
 
+#project {
+    background: var(--darker-color);
+}
+
+/* now select 'PROJECTS' heading, and style it */
+#project h2 {
+    font-size: 6rem;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* Now, let's style all the Projects */
+
+.project_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* makes grid responsive */
+    gap: 2rem;
+}
+
+/* we can see the items in grid are far, let's fix that */
+.grid_item {
+    display: grid;
+    place-items: center;
+}
+
+/* now let's give it CARD outlook */
+.card {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem; /* will give rounded corners, but will only be seen when you set overflow hidden */
+    overflow: hidden;
+    transition: 0.2s ease-in-out;
+}
+
+/* let's give card hover effect and zoom effect */
+.card:hover {
+    transform: scale(1.05);
+    transition: 1s ease-in-out;
+}
+
+/* to zoom in image when you hover over it */
+.card:hover img {
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+    opacity: 0.8;
+}
+
+/* now let's make the content/title of card come from down to up when you hover over it */
+.card_content {
+    padding: 2rem;
+    position: relative;
+    top: -6.5rem; /* reducing height from top to this many */
+    margin-bottom: -6.5rem;
+    transition: 0.5s ease-in-out;
+    transform: translateY(100px);
+}
+
+/* but still, nothing much has changed, let's do this also */
+.card:hover .card_content {
+    background: white; /* this will make background of text white */
+    color: var(--dark-color); /* making color of text dark */
+    transform: translateY(0px); /* to make text come from down to up */
+}
+
+/* to align text in center */
+.card_content h3 {
+    text-align: center;
+}
+
+/* now we want the titles of the projects to be hidden, and only become visible if hovered upon */
+/* to do this, transform lines were added above in .card_content and .card:hover .card_content */
+
+/* Projects Section COMPLETED HERE */
+/* ----------------------------------------------------------------------------- */
+
+
+/* 4. CONTACT */
+
+#contact {
+    background: var(--dark-color); /* it will change background color of this section to this color */
+}
+
+/* now let's fix the heading, it will make it bold and place it in center  */
+#contact h2 {
+    font-size: 6rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+/* now let's put all social medias in container first */
+#contact .container {
+    height: 90vh; /* setting container's height (it will take 90% of the screen)*/
+    display: flex;
+    flex-direction: column; 
+    gap: 4rem;
+    justify-content: center;
+}
+
+/* now let's bring linkedin, twitter, and send mail in one line by using 'grid'. */
+.top_contact {
+    display: grid;
+    margin: 0 auto; /* so that it comes in center */
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    max-width: 800px;
+}
+
+/* now let's fix these icons */
+.contact_way {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* let's adjust size of the icons */
+.contact_way i {
+    font-size: 3rem;
+}
+
+/* also increase text's size */
+.contact_way h3 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+/* NOW let's do same for BOTTOM_CONTACT */
+
+.bottom_contact {
+    display: grid;
+    margin: 0 auto; /* so that it comes in center */
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    max-width: 400px;
+    gap: 2rem;
+}
+
+
+/* ----------------------------------------------------------------------------- */
+
+/* 5. FOOTER */
+
+footer {
+    background: var(--darker-color);
+    padding: 2rem;
+    color: white; /* color of text */
+    font-size: 1.6rem;
+    text-align: center; /* to align the text in center */
+}
+
+/* ---------------------------------------------------------------------------- */
+
+/* Making this site RESPONSIVE */
+
+/* Media Query */
+
+/* for tablets */
+@media (max-width: 786px) {
+    html {
+      font-size: 40%;
+    }
+    #hero .container {
+      flex-direction: column;
+    }
+    .hero_image {
+      display: grid;
+      place-items: center;
+    }
+    #contact .container {
+      height: 70vh;
+    }
+  }
+  /* for mobiles */
+@media (max-width: 500px) {
+    html {
+      font-size: 32%;
+    }
+    #hero .container {
+      flex-direction: column;
+    }
+    .hero_image {
+      display: grid;
+      place-items: center;
+    }
+    #contact .container {
+      height: 50vh;
+    }
+  }
